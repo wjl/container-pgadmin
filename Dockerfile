@@ -27,7 +27,8 @@ EXPOSE 80
 # Export the pgadmin volume.
 VOLUME /var/lib/pgadmin
 
-# Point to the original entrypoint.
+# Set the workdir & entrypoint.
+WORKDIR /pgadmin4
 ENTRYPOINT ["/entrypoint.sh"]
 
 # Check every once in a while to see if the server is still running.
