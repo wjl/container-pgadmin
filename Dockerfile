@@ -4,7 +4,8 @@ FROM dpage/pgadmin4 as build
 # Get rid of postfix, which should never have been included.
 RUN \
 	apk del postfix && \
-	rm -r /var/cache/apk/*
+	rm -r /var/cache/apk/* && \
+	sed -ie '/[Pp]ostfix/d' /entrypoint.sh
 
 # Remove all the superfluous versions of the Postgres tools.
 RUN \
