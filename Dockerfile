@@ -5,7 +5,7 @@ FROM dpage/pgadmin4 as build
 RUN \
 	apk del postfix && \
 	rm -r /var/cache/apk/* && \
-	sed -ie '/[Pp]ostfix/d' /entrypoint.sh
+	sed -i '/[Pp]ostfix/d' /entrypoint.sh
 
 # Remove all the superfluous versions of the Postgres tools.
 RUN \
