@@ -9,7 +9,7 @@ RUN \
 # Remove all the superfluous versions of the Postgres tools.
 RUN \
 	for i in 9 10 11; do \
-		rm -rf /usr/local/pgsql-"$i"; \
+		rm -rf /usr/local/pgsql-"$i"*; \
 	done
 
 # Remove static libraries that are worthless in a container.
